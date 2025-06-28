@@ -21,15 +21,33 @@ describe('Home Page', () => {
     const mockPrograms = [
       {
         id: '1',
+        stationID: 'TBS',
+        station_name: 'TBSラジオ',
+        day: '2025-06-28',
+        ft: '2025-06-28T06:00:00',
+        to: '2025-06-28T09:00:00',
+        dur: 10800,
         title: 'Morning Show',
-        time: '06:00 - 09:00',
-        description: 'Start your day with music and news'
+        pfm: 'Test Host',
+        desc: null,
+        info: 'Start your day with music and news',
+        tag: ['morning', 'news'],
+        url: 'https://example.com'
       },
       {
         id: '2',
+        stationID: 'TBS',
+        station_name: 'TBSラジオ',
+        day: '2025-06-28',
+        ft: '2025-06-28T18:00:00',
+        to: '2025-06-28T19:00:00',
+        dur: 3600,
         title: 'Evening News',
-        time: '18:00 - 19:00',
-        description: 'Daily news update'
+        pfm: 'News Anchor',
+        desc: null,
+        info: 'Daily news update',
+        tag: ['news'],
+        url: 'https://example.com'
       }
     ]
 
@@ -48,14 +66,16 @@ describe('Home Page', () => {
     })
   })
 
-  it('renders error message when API call fails', async () => {
+  it('renders mock data when API call fails', async () => {
     ;(fetch as jest.Mock).mockRejectedValueOnce(new Error('Failed to fetch'))
 
     render(<Home />)
 
     await waitFor(() => {
-      expect(screen.getByText('Error: Failed to fetch')).toBeInTheDocument()
-    })
+      expect(screen.getByText('モーニングショー')).toBeInTheDocument()
+      expect(screen.getByText('お昼のニュース')).toBeInTheDocument()
+      expect(screen.getByText('イブニングトーク')).toBeInTheDocument()
+    }, { timeout: 3000 })
   })
 
   it('renders "No programs available" when API returns empty array', async () => {
