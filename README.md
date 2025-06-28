@@ -2,6 +2,8 @@
 
 A static Next.js application that displays a radio program schedule fetched from a custom API. The app is designed to be deployed to GitHub Pages.
 
+<!-- Dummy comment added for PR testing verification -->
+
 ## Features
 
 - Static site generation using Next.js `export`
