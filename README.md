@@ -2,6 +2,10 @@
 
 A static Next.js application that displays a radio program schedule fetched from a custom API. The app is designed to be deployed to GitHub Pages.
 
+## Live Demo
+
+🌐 **GitHub Pages**: https://ougotti.github.io/radioproglist/
+
 ## Features
 
 - Static site generation using Next.js `export`
