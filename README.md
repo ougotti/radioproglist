@@ -28,7 +28,7 @@ A static Next.js application that displays a radio program schedule fetched from
    ```
    Edit `.env.local` and set your API endpoint:
    ```
-   NEXT_PUBLIC_API_ENDPOINT=https://your-api-endpoint.com/api/programs
+   NEXT_PUBLIC_API_ENDPOINT=https://v8pwp7d7bd.execute-api.ap-northeast-1.amazonaws.com/prod/programs
    ```
 
 ## Development
