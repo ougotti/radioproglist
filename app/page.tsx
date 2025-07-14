@@ -57,6 +57,7 @@ export default function Home() {
         }
         
         const data = await response.json()
+        console.log('API response received:', data.length, 'programs')
         setPrograms(data)
       } catch (err) {
         console.warn('API call failed, using mock data:', err)
